@@ -1,0 +1,82 @@
+/* MedTweaks edits existing medical items and adds new ones cloned from existing ones.
+   
+   Check https://localhost:6969/webui/db/ while the server is running to search the itemDB for meds.
+*/
+{
+    /* Duplicate keys are fine because each is its own object.
+       Example: edit Salewa in place AND clone a new med from Salewa using two separate entries.
+    */
+    "meds": [
+        {
+            "590c657e86f77412b013051d": { /* Grizzly medical kit <color=#14ff00>[T3]</color> */
+                "medUseTime": 10, /* Seconds the heal animation takes. */
+                "maxHpResource": 1800, /* Total HP pool of the kit. */
+                "weight": 3, /* Item weight. */
+                "hpResourceRate": 135, /* HP restored per healing tick. 0 = the whole effect is applied at once. */
+                "stimulatorBuffs": "", /* Stimulator buff key. No idea if this is useful. */
+                "banFromRigs": true, /* Ban this med from every chest rig and armoured rig. */
+                /* The complete list of damage effects the med can treat.
+                   0 HeavyBleeding   3 Contusion            6 RadExposure
+                   1 LightBleeding   4 Intoxication         7 Pain
+                   2 Fracture        5 LethalIntoxication   8 DestroyedPart
+                */
+                "effects": {
+                    "0": {
+                        "delay": 0,
+                        "duration": 0, /* Seconds the effect is applied/suppressed for. */
+                        "fadeOut": 0,
+                        "cost": 130 /* HP drawn from the kit pool to cure the effect once. */
+                    },
+                    "1": {
+                        "delay": 0,
+                        "duration": 0,
+                        "fadeOut": 0,
+                        "cost": 40
+                    },
+                    "2": {
+                        "delay": 0,
+                        "duration": 0,
+                        "fadeOut": 0,
+                        "cost": 50
+                    },
+                    "3": {
+                        "delay": 0,
+                        "duration": 0,
+                        "fadeOut": 0,
+                        "cost": 0
+                    },
+                    "6": {
+                        "delay": 0,
+                        "duration": 0,
+                        "fadeOut": 0,
+                        "cost": 0
+                    }
+                }
+            }
+        },
+        {
+            "544fb45d4bdc2dee738b4568": { /* Salewa first aid kit <color=#96ff00>[T2]</color> */
+                "medUseTime": 3,
+                "maxHpResource": 550,
+                "weight": 0.6,
+                "hpResourceRate": 85,
+                "stimulatorBuffs": "",
+                "banFromRigs": false,
+                "effects": {
+                    "0": {
+                        "delay": 0,
+                        "duration": 0,
+                        "fadeOut": 0,
+                        "cost": 120
+                    },
+                    "1": {
+                        "delay": 0,
+                        "duration": 0,
+                        "fadeOut": 0,
+                        "cost": 30
+                    }
+                }
+            }
+        }
+    ]
+}
