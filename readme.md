@@ -3,10 +3,10 @@
 Adjusts existing medical items and adds new ones cloned from existing ones. Everything is
 driven by `config/config.jsonc`.
 
-## Requires
+## Requirements
 
 - SPT 4.0.x
-- Leaves-LeavesUtil
+- [Leaves-LeavesUtil](https://github.com/DeadLeavez/Leaves-LeavesUtil) ([latest release](https://github.com/DeadLeavez/Leaves-LeavesUtil/releases/latest)) - required.
 
 ## Config
 
